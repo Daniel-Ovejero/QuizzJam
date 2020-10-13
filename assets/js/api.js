@@ -13,9 +13,10 @@ fetch('https://opentdb.com/api_category.php').then((response) => {
 });
 
 categBlock.addEventListener('click', (event) => {
-    let child = event.target
-    let categ = document.getElementById(child.id);
+    let target = event.target;
 
-    document.getElementById('result').innerText = categ.textContent;
+    if (target.tagName === 'P') { target = target.parentElement; }
+
+    target.style.border = "solid red 3px";
 
 })

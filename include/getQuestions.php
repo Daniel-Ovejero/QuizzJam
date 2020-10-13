@@ -7,9 +7,11 @@ $result = $dbh->query($sql);
 $result->setFetchMode(PDO::FETCH_OBJ);
 $row = $result->fetch();
 
-//$t = json_encode($row->json);
-//var_dump($t);
-//$r = json_decode($row);
-$r = json_decode($row->json);
-var_dump($r);
+$quest = json_decode($row->json);
 
+$answers = $quest->results[$_GET['question']]->incorrect_answers;
+$answers[] = $quest->results[$_GET['question']]->correct_answer;
+
+
+
+shuffle($answers);

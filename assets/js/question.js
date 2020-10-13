@@ -29,6 +29,10 @@ function nextQuestion(element){
             newScore++;
             sessionStorage.setItem('score', newScore);
         }
-         window.location.href = "end.php";
+        let data = new FormData();
+        data.append("score", sessionStorage.getItem('score'));
+        fetch('./include/end-back.php', {method: 'post', body: data}).then((resp) => {
+            window.location.href = "end.php";
+        })
     }
 }

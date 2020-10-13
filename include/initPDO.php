@@ -8,7 +8,7 @@ $username = 'root';
 /*** mysql password ***/
 $password = '';
 
-$dbname = 'quizz-jam';
+$dbname = 'quizz_jam';
 
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);

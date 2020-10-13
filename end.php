@@ -22,10 +22,13 @@ session_start();
             <div class="row h-100 justify-content-center align-items-center center-block">
                 <img class="img-fluid rounded-circle" style="width: 35%;" src="./assets/images/trophe.png" alt="Trophe">
             </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" id="defi" value="<?= $_SESSION['link'] ?>">Défiez vos amis</button>
+            </div>
         </div>
 
     </div>
-    <canvas style="position: absolute; z-index: -1; top: -10px;" id="canvas"></canvas>
+    <canvas style="position: absolute; z-index: -1; top: 0;" id="canvas"></canvas>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

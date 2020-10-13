@@ -19,8 +19,3 @@ catch(PDOException $e)
 {
     $e->getMessage();
 }
-
-if(isset($_POST['pseudo'])){
-    $pseudo = $_POST['pseudo'];
-    $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");
-}

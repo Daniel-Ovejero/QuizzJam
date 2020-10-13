@@ -1,5 +1,7 @@
 const categBlock = document.getElementById('categBlock');
 const formGamemode = document.getElementById('gamemodeSelect');
+const btnCodeAmi = document.getElementById('btnCodeAmi');
+const codeAmi = document.getElementById('codeDef');
 
 let preventTarget = null;
 let idCategory = null;
@@ -27,6 +29,11 @@ categBlock.addEventListener('click', (event) => {
     idCategory = target.id;
 
 })
+
+function onCodeAmi() {
+    codeAmi.style.transition = "all 1s ease-in-out";
+    codeAmi.style.height = "100px";
+}
 
 formGamemode.addEventListener('submit', (event) => {
     let target = event.target;

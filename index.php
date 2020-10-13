@@ -23,6 +23,16 @@ session_destroy();
         <div class="text-center">
             <input class="form-control small-input" id="pseudo" name="pseudo" placeholder="Pseudo">
         </div>
+
+        <button id="btnCodeAmi" class="btn btn-primary mt-3" type="button" onclick="onCodeAmi()" >Entrer un code ami</button>
+
+        <div style="height: 0px; overflow:hidden;" id="codeDef">
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" id="codeAmi" name="codeAmi" placeholder="Entrer un code pour relever le défi de vos amis">
+            </div>
+        </div>
+
         <div class="text-center mt-xl-5">
             <button class="btn btn-primary" id="next" type="submit">Suivant</button>
         </div>

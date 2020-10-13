@@ -15,7 +15,14 @@ if(isset($_POST['pseudo'])){
 
     if($row){
         $_SESSION['id'] = $row->id;
-        header("Location: ../gamemode.php");
+        if(isset($_POST['codeAmi'])){
+            $_SESSION['link'] = $_POST['codeAmi'];
+            header("Location: ../question.php");
+        }
+        else{
+            header("Location: ../gamemode.php");
+        }
+
     }
     else{
         $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");

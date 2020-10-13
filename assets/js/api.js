@@ -1,5 +1,8 @@
 const categBlock = document.getElementById('categBlock');
+const formGamemode = document.getElementById('gamemodeSelect');
+
 let preventTarget = null;
+let idCategory = null;
 
 fetch('https://opentdb.com/api_category.php').then((response) => {
     response.json().then((jsonObject) => {
@@ -16,12 +19,28 @@ fetch('https://opentdb.com/api_category.php').then((response) => {
 categBlock.addEventListener('click', (event) => {
     let target = event.target;
 
-    if (preventTarget !== null) {
-        preventTarget.removeAttribute('style');
-    }
-    preventTarget = target;
+    if (preventTarget !== null) { preventTarget.removeAttribute('style'); }
     if (target.tagName === 'P') { target = target.parentElement; }
 
     target.style.border = "solid red 3px";
+    preventTarget = target;
+    idCategory = target.id;
 
 })
+
+formGamemode.addEventListener('submit', (event) => {
+    let target = event.target;
+    event.preventDefault();
+
+    let url = "https://opentdb.com/api.php?amount="+target.nbQuestion.value;
+
+    if (target.difficulty.value) { url += "&difficulty=" + target.difficulty.value; }
+    if (idCategory !== null) { url += "&category=" + idCategory; }
+
+    fetch(url).then((response) => {
+        response.json().then((jsonObject) => {
+            console.log(jsonObject);
+
+        });
+    });
+});

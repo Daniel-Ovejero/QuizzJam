@@ -14,29 +14,31 @@
     <section>
         <div class="container">
             <h5>Sélectionnez une difficultée</h5>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="difficulty" id="all" value="" checked="">
-                <label class="form-check-label" for="all">Toute difficultés</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="difficulty" id="easy" value="easy">
-                <label class="form-check-label" for="easy">Facile</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="difficulty" id="medium" value="medium">
-                <label class="form-check-label" for="medium">Normal</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="difficulty" id="hard" value="hard">
-                <label class="form-check-label" for="hard">Difficile</label>
-            </div>
-            <br><br>
-            <h5>Entrez un nombre de question</h5>
-            <input type="number" name="nbQuestion" id="nbQuestion" class="form-control" min="1" max="50" value="10">
-            <br><br>
-            <div class="text-right">
-                <button class="btn btn-primary" type="submit">Commencer</button>
-            </div>
+            <form id="gamemodeSelect" action="" method="post">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="difficulty" id="all" value="" checked="">
+                    <label class="form-check-label" for="all">Toute difficultés</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="difficulty" id="easy" value="easy">
+                    <label class="form-check-label" for="easy">Facile</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="difficulty" id="medium" value="medium">
+                    <label class="form-check-label" for="medium">Normal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="difficulty" id="hard" value="hard">
+                    <label class="form-check-label" for="hard">Difficile</label>
+                </div>
+                <br><br>
+                <h5>Entrez un nombre de question</h5>
+                <input type="number" name="nbQuestion" id="nbQuestion" class="form-control" min="1" max="50" value="10">
+                <br><br>
+                <div class="text-right">
+                    <button class="btn btn-primary" type="submit">Commencer</button>
+                </div>
+            </form>
         </div>
     </section>
 

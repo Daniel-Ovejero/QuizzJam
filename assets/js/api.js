@@ -45,7 +45,7 @@ formGamemode.addEventListener('submit', (event) => {
             datas.append('questions', JSON.stringify(jsonObject.results));
 
             fetch('./include/save.php', {method: 'post', body: datas}).then((resp) => {
-                console.log(resp);
+                console.log(window.location.href = "question.php" + "?question=0");
             })
 
         });

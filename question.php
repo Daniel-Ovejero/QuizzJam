@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once ('include/getQuestions.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,20 +11,35 @@ session_start();
     <title>QuizzJam</title>
 </head>
 <body>
+
 <div class="question text-center">
-    <h1 class="question-texte">Test</h1>
+    <h1 id="question" class="question-texte"></h1>
 </div>
 
 <div>
-    <div class="row justify-content-center">
-        <button class="col-sm-2 answer btn">Rep 1</button>
-        <button class="col-sm-2 answer btn">Rep 1</button>
-    </div>
-
-    <div class="row justify-content-center">
-        <button class="col-sm-2 answer btn">Rep 1</button>
-        <button class="col-sm-2 answer btn">Rep 1</button>
-    </div>
+    <input type="hidden" value="<?php $row[$_GET['question']]['correct_answer'] ?>">
+    <?php
+        if($row[$_GET['question']]['type'] === "boolean"){
+            echo'
+                <div class="row justify-content-center">
+                    <button id="but1" class="col-sm-2 answer btn">Vrai</button>
+                    <button id="but2" class="col-sm-2 answer btn">Faux</button>
+                </div>
+                ';
+        }
+        else{
+            echo'
+                <div class="row justify-content-center">
+                    <button id="but1" class="col-sm-2 answer btn">'.$row[$_GET['question']]['rep'].'</button>
+                    <button id="but2" class="col-sm-2 answer btn">'.$row[$_GET['question']]['rep'].'</button>
+                </div>
+                <div class="row justify-content-center">
+                    <button id="but3" class="col-sm-2 answer btn">'.$row[$_GET['question']]['reponse'].'</button>
+                    <button id="but4" class="col-sm-2 answer btn">'.$row[$_GET['question']]['reponse'].'</button>
+                </div>
+                ';
+        }
+    ?>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

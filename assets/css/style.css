@@ -1,3 +1,7 @@
+.small-input{
+    display: inline-block;
+    width: 600px;
+}
 .categBlock {
     border: solid black 2px;
     height: 75px;

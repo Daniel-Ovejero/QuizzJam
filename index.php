@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>QuizzJam</title>
 </head>
 <body>
@@ -10,15 +11,15 @@
     <div class="text-center mt-xl-5">
         <h1>QUIZZ JAM</h1>
     </div>
-    <form name="form-pseudo" method="post" action="save.php">
+    <form name="form-pseudo" method="post" action="./include/save.php">
         <div class="text-center mt-xl-5">
             <label for="pseudo">Choisissez votre pseudo</label>
         </div>
         <div class="text-center">
-            <input id="pseudo" name="pseudo" placeholder="Pseudo">
+            <input class="form-control small-input" id="pseudo" name="pseudo" placeholder="Pseudo">
         </div>
         <div class="text-center mt-xl-5">
-            <button id="next" type="submit">Suivant</button>
+            <button class="btn btn-primary" id="next" type="submit">Suivant</button>
         </div>
     </form>
 </div>

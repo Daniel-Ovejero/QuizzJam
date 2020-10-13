@@ -41,6 +41,13 @@ formGamemode.addEventListener('submit', (event) => {
         response.json().then((jsonObject) => {
             console.log(jsonObject);
 
+            let datas = new FormData();
+            datas.append('questions', JSON.stringify(jsonObject.results));
+
+            fetch('./include/save.php', {method: 'post', body: datas}).then((resp) => {
+                console.log(resp);
+            })
+
         });
     });
 });

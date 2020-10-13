@@ -46,6 +46,8 @@ formGamemode.addEventListener('submit', (event) => {
 
             fetch('./include/save.php', {method: 'post', body: datas}).then((resp) => {
                 sessionStorage.setItem('score', '0');
+                if(target.nbQuestion.value != null){ sessionStorage.setItem('nbQuestions', target.nbQuestion.value); }
+                else{ sessionStorage.setItem('nbQuestions', 10); }
                 window.location.href = "question.php" + "?question=0";
             })
 

@@ -17,7 +17,6 @@ require_once ('include/getQuestions.php');
 </div>
 
 <div>
-    <input id="maxQuestions" type="hidden" value="10">
     <input id="correct_answer" type="hidden" value="<?php echo $quest->results[$_GET['question']]->correct_answer ?>">
     <?php
         if($quest->results[$_GET['question']]->type === "boolean"){

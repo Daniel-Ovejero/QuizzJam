@@ -12,9 +12,9 @@ function nextQuestion(element){
     let urlParams = new URLSearchParams(queryString);
     let question = urlParams.get('question');
 
-    console.log(maxQuestions.value, question);
     nbquestion = parseInt(question);
-    if(nbquestion + 1 < maxQuestions.value){
+    questionTot = parseInt(sessionStorage.getItem('nbQuestions'));
+    if(nbquestion + 1 < questionTot){
         question ++;
         if(element.value === correct_answer.value){
             let newScore = sessionStorage.getItem('score');

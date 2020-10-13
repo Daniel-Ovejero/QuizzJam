@@ -15,14 +15,13 @@ if(isset($_POST['pseudo'])){
 
     if($row){
         $_SESSION['id'] = $row->id;
-        if(isset($_POST['codeAmi'])){
+        if(isset($_POST['codeAmi']) && $_POST['codeAmi'] != ""){
             $_SESSION['link'] = $_POST['codeAmi'];
-            header("Location: ../question.php");
+            header("Location: ../question.php?question=0");
         }
         else{
             header("Location: ../gamemode.php");
         }
-
     }
     else{
         $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");
@@ -33,7 +32,13 @@ if(isset($_POST['pseudo'])){
 
         if($row){
             $_SESSION['id'] = $row->id;
-            header("Location: ../gamemode.php");
+            if(isset($_POST['codeAmi']) && $_POST['codeAmi'] != ""){
+                $_SESSION['link'] = $_POST['codeAmi'];
+                header("Location: ../question.php?question=0");
+            }
+            else{
+                header("Location: ../gamemode.php");
+            }
         }
     }
 }

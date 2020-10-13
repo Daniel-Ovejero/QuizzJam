@@ -32,13 +32,16 @@ if(isset($_POST['pseudo'])){
 }
 
 if (isset($_POST['questions']) && $_POST['questions'] != '') {
-    $jsonObject = $_POST['questions'];
+    $jsonObject = json_decode($_POST['questions']);
+    $jsonObject = json_encode($jsonObject);
 
     $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $link = '';
     for($i=0; $i<10; $i++){
         $link .= $chars[rand(0, strlen($chars)-1)];
     }
+
+    var_dump($jsonObject);
 
     $dbh->exec("INSERT INTO question (lien, json) VALUE ('$link', '$jsonObject')");
 

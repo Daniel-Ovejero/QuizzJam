@@ -1,7 +1,5 @@
 <?php
 session_start();
-session_unset();
-session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,21 +10,20 @@ session_destroy();
     <title>QuizzJam</title>
 </head>
 <body>
-<div class="container">
-    <div class="text-center mt-xl-5">
-        <h1>QUIZZ JAM</h1>
+<div class="question text-center">
+    <h1 class="question-texte">Test</h1>
+</div>
+
+<div>
+    <div class="row justify-content-center">
+        <button class="col-sm-2 answer btn">Rep 1</button>
+        <button class="col-sm-2 answer btn">Rep 1</button>
     </div>
-    <form name="form-pseudo" method="post" action="./include/save.php">
-        <div class="text-center mt-xl-5">
-            <label for="pseudo">Choisissez votre pseudo</label>
-        </div>
-        <div class="text-center">
-            <input class="form-control small-input" id="pseudo" name="pseudo" placeholder="Pseudo">
-        </div>
-        <div class="text-center mt-xl-5">
-            <button class="btn btn-primary" id="next" type="submit">Suivant</button>
-        </div>
-    </form>
+
+    <div class="row justify-content-center">
+        <button class="col-sm-2 answer btn">Rep 1</button>
+        <button class="col-sm-2 answer btn">Rep 1</button>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

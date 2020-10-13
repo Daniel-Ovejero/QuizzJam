@@ -7,19 +7,26 @@ if(isset($_POST['pseudo'])){
     $pseudo = $_POST['pseudo'];
     $_SESSION['pseudo'] = $pseudo;
 
-    $sql = "SELECT * FROM user WHERE pseudo like '$pseudo'";
+    $sql = "SELECT * FROM user WHERE pseudo = '$pseudo'";
 
-    foreach ($dbh->query($sql) as $row){
-        $_SESSION['id'] = $row['id'];
-        $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");
-        header("Location: gamemode.php");
+    $result = $dbh->query($sql);
+    $result->setFetchMode(PDO::FETCH_OBJ);
+    $row = $result->fetch();
+
+    if($row){
+        $_SESSION['id'] = $row->id;
+        header("Location: ../gamemode.php");
     }
-
-    $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");
-
-    foreach ($dbh->query($sql) as $row){
-        $_SESSION['id'] = $row['id'];
+    else{
         $dbh->exec("INSERT INTO user (pseudo) VALUES ('$pseudo')");
-        header("Location: gamemode.php");
+
+        $result = $dbh->query($sql);
+        $result->setFetchMode(PDO::FETCH_OBJ);
+        $row = $result->fetch();
+
+        if($row){
+            $_SESSION['id'] = $row->id;
+            header("Location: ../gamemode.php");
+        }
     }
 }

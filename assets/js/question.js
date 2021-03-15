@@ -30,7 +30,7 @@ function nextQuestion(element){
             sessionStorage.setItem('score', newScore);
         }
         let data = new FormData();
-        data.append("score", sessionStorage.getItem('score'));
+        data.append('score', JSON.stringify(sessionStorage.getItem('score')));
         fetch('./include/end-back.php', {method: 'post', body: data}).then((resp) => {
             window.location.href = "end.php";
         })

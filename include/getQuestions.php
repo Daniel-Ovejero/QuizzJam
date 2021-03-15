@@ -9,6 +9,8 @@ $row = $result->fetch();
 
 $quest = json_decode($row->json);
 
+$nbQuestion = sizeof($quest->results);
+
 $answers = $quest->results[$_GET['question']]->incorrect_answers;
 $answers[] = $quest->results[$_GET['question']]->correct_answer;
 
